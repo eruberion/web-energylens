@@ -184,26 +184,40 @@ body {
   align-items: center;
   position: relative;
 }
-.app-icon-wrap {
+.phone-mockup {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
-.app-icon-glow {
+.phone-glow {
   position: absolute;
-  inset: -40px;
-  background: radial-gradient(ellipse at center, rgba(34,211,165,0.2) 0%, transparent 70%);
-  border-radius: 50%;
+  top: 10%; left: 50%;
+  transform: translateX(-50%);
+  width: 300px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(34,211,165,0.18) 0%, transparent 70%);
+  pointer-events: none;
   animation: pulse-glow 3s ease-in-out infinite;
 }
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
-.app-icon {
-  width: 220px; height: 220px;
-  border-radius: 48px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+.phone-frame {
   position: relative;
   z-index: 1;
+  width: 260px;
+  background: #0a0a0a;
+  border-radius: 44px;
+  padding: 10px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.1),
+    0 40px 80px rgba(0,0,0,0.7),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+.phone-screenshot {
+  width: 100%;
+  border-radius: 36px;
+  display: block;
 }
 
 /* ── Stats bar ── */
