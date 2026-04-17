@@ -220,6 +220,40 @@ body {
   display: block;
 }
 
+/* ── App Preview ── */
+.preview-section {
+  padding-top: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.preview-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.phone-light {
+  background: #f5f5f7;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.1),
+    0 40px 80px rgba(0,0,0,0.4),
+    inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+.preview-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 /* ── Stats bar ── */
 .stats-bar {
   background: var(--surface);
