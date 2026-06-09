@@ -7,6 +7,7 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 ## [Unreleased]
 
 - Landingpage entlang `DESIGN.md` sichtbar verfeinert: Hero-Headline, App-Screenshot-Inszenierung, Energie-/Preis-Signature, Preview-Texte und Tibber-Trust-Sektion.
+- Widget-Claims vereinheitlicht: Homescreen-Widgets werden konsistent als geplant/Roadmap kommuniziert.
 
 ---
 
