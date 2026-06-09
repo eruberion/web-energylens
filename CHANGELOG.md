@@ -6,6 +6,8 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+- Landingpage entlang `DESIGN.md` sichtbar verfeinert: Hero-Headline, App-Screenshot-Inszenierung, Energie-/Preis-Signature, Preview-Texte und Tibber-Trust-Sektion.
+
 ---
 
 ## 2026-05-24 — Hygiene-Fix: CHANGELOG.md, DEPLOYMENT.md, FALLBACK.md angelegt

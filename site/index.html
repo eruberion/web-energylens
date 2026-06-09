@@ -35,15 +35,13 @@
     <main>
       <!-- Hero -->
       <section class="hero">
-        <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-inner">
           <div class="hero-copy">
-            <span class="hero-eyebrow">iOS App</span>
-            <h1>Energie verstehen.<br /><em>Kosten im Griff.</em></h1>
+            <span class="hero-eyebrow">EnergyLens für iPhone</span>
+            <h1>Strompreise sehen, bevor sie teuer werden.</h1>
             <p class="hero-sub">
-              EnergyLens bereitet deine Tibber-Energie- und Verbrauchsdaten
-              verständlich auf — für Menschen, die ihre Stromkosten kennen wollen,
-              ohne Ingenieur zu sein.
+              EnergyLens macht Tibber-Preise, Verbrauch und Kostenvergleiche
+              so lesbar, dass du gute Entscheidungen direkt im Alltag triffst.
             </p>
             <div class="hero-actions">
               <a class="app-store-btn" href="#download">
@@ -57,11 +55,23 @@
               </a>
               <a class="button button-secondary" href="#features">Mehr erfahren</a>
             </div>
+            <div class="hero-proof" aria-label="Produktvertrauen">
+              <span>Lokal gespeicherter Tibber-Token</span>
+              <span>iOS 17+</span>
+              <span>Widgets geplant</span>
+            </div>
           </div>
           <div class="hero-visual">
-            <div class="phone-mockup">
-              <div class="phone-glow" aria-hidden="true"></div>
-              <div class="phone-frame">
+            <div class="hero-device-stage">
+              <div class="hero-meter-card hero-meter-card--price">
+                <span>Günstigste Stunde</span>
+                <strong>14:00</strong>
+              </div>
+              <div class="hero-meter-card hero-meter-card--saving">
+                <span>Heute im Blick</span>
+                <strong>Preis + Verbrauch</strong>
+              </div>
+              <div class="phone-frame hero-phone">
                 <img class="phone-screenshot" src="./assets/images/screenshot-dashboard.png" alt="EnergyLens Dashboard" />
               </div>
             </div>
@@ -82,25 +92,37 @@
               <div class="phone-frame phone-light">
                 <img class="phone-screenshot" src="./assets/images/screenshot-dashboard.png" alt="EnergyLens Light Mode" />
               </div>
-              <p class="preview-label">Light Mode</p>
+              <div class="preview-copy">
+                <p class="preview-label">Dashboard</p>
+                <span>Preise, Verbrauch und Kosten an einem Ort.</span>
+              </div>
             </div>
             <div class="preview-item">
               <div class="phone-frame">
                 <img class="phone-screenshot" src="./assets/images/screenshot-dashboard-dark.png" alt="EnergyLens Dark Mode" />
               </div>
-              <p class="preview-label">Dark Mode</p>
+              <div class="preview-copy">
+                <p class="preview-label">Dark Mode</p>
+                <span>Ruhige Ansicht für jeden Tagesrhythmus.</span>
+              </div>
             </div>
             <div class="preview-item">
               <div class="phone-frame">
                 <img class="phone-screenshot" src="./assets/images/screenshot-beste-zeiten.png" alt="EnergyLens Beste Zeiten" />
               </div>
-              <p class="preview-label">Beste Zeiten</p>
+              <div class="preview-copy">
+                <p class="preview-label">Beste Zeiten</p>
+                <span>Lade- und Laufzeiten besser planen.</span>
+              </div>
             </div>
             <div class="preview-item">
               <div class="phone-frame">
                 <img class="phone-screenshot" src="./assets/images/screenshot-analyse.png" alt="EnergyLens Analyse" />
               </div>
-              <p class="preview-label">Analyse</p>
+              <div class="preview-copy">
+                <p class="preview-label">Analyse</p>
+                <span>Monate vergleichen und Muster erkennen.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -169,52 +191,52 @@
       </section>
 
       <!-- Tibber Integration -->
-      <section class="section" id="tibber" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <section class="section trust-section" id="tibber">
         <div class="section-inner">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div class="trust-layout">
             <div class="reveal">
               <div class="integration-badge">
                 <span class="dot"></span>
                 Tibber-Integration
               </div>
               <p class="section-kicker">Voraussetzung</p>
-              <h2 style="margin-bottom: 20px;">Gemacht für Tibber-Kunden.</h2>
-              <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 16px;">
+              <h2>Gemacht für Tibber-Kunden.</h2>
+              <p class="trust-copy">
                 EnergyLens ist speziell für Nutzer des Tibber-Stromtarifs entwickelt.
                 Die App greift per API auf deine Verbrauchsdaten zu — sicher,
                 ohne dass Zugangsdaten gespeichert werden.
               </p>
-              <p style="color: var(--text-2); line-height: 1.7;">
+              <p class="trust-copy">
                 Noch kein Tibber-Kunde? Mit unserem Empfehlungslink bekommt
                 ihr beide einen Startbonus.
               </p>
             </div>
-            <div class="reveal" style="display: flex; flex-direction: column; gap: 16px;">
-              <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 40px; height: 40px; background: var(--accent-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <div class="trust-card-stack reveal">
+              <div class="trust-card">
+                <div class="trust-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div>
-                  <strong style="font-size: 0.95rem;">Sicher & privat</strong>
-                  <p style="font-size: 0.85rem; color: var(--text-2); margin-top: 4px;">Dein Tibber-Token wird ausschließlich lokal auf deinem Gerät gespeichert.</p>
+                  <strong>Sicher & privat</strong>
+                  <p>Dein Tibber-Token wird ausschließlich lokal auf deinem Gerät gespeichert.</p>
                 </div>
               </div>
-              <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 40px; height: 40px; background: var(--accent-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap: round; stroke-linejoin: round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <div class="trust-card">
+                <div class="trust-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
                 <div>
-                  <strong style="font-size: 0.95rem;">Echtzeit-Daten</strong>
-                  <p style="font-size: 0.85rem; color: var(--text-2); margin-top: 4px;">Strompreise werden direkt von der Tibber GraphQL API geladen — immer aktuell.</p>
+                  <strong>Echtzeit-Daten</strong>
+                  <p>Strompreise werden direkt von der Tibber GraphQL API geladen.</p>
                 </div>
               </div>
-              <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 40px; height: 40px; background: var(--accent-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <div class="trust-card">
+                <div class="trust-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <div>
-                  <strong style="font-size: 0.95rem;">Automatisch aktuell</strong>
-                  <p style="font-size: 0.85rem; color: var(--text-2); margin-top: 4px;">Hintergrund-Refresh hält Preise und Verbrauchsdaten ohne manuelles Aktualisieren frisch.</p>
+                  <strong>Launch-Status klar</strong>
+                  <p>App Store, iOS-Version und Funktionsumfang bleiben sichtbar eingeordnet.</p>
                 </div>
               </div>
             </div>
@@ -225,10 +247,10 @@
       <!-- CTA -->
       <section class="cta-section" id="download">
         <div class="cta-inner reveal">
-          <img src="./assets/images/app-icon.png" alt="EnergyLens" style="width: 80px; height: 80px; border-radius: 18px;" />
+          <img class="cta-icon" src="./assets/images/app-icon.png" alt="EnergyLens" />
           <h2>Deinen Strom endlich verstehen.</h2>
           <p>EnergyLens ist kostenlos im App Store erhältlich — für iPhones ab iOS 17.</p>
-          <a class="app-store-btn" href="#" style="font-size: 1rem;">
+          <a class="app-store-btn" href="#">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
