@@ -30,7 +30,8 @@ open site/index.html
 
 1. Vor Deploy: lokale Sichtprüfung im Browser.
 2. Sicherstellen, dass keine falschen App-Store-, Preis- oder Feature-Angaben enthalten sind.
-3. GitHub bleibt Source of Truth.
+3. `VERSION` und `CHANGELOG.md` bei sichtbaren oder relevanten Aenderungen aktualisieren.
+4. GitHub bleibt Source of Truth.
 
 ## Health-Check (gültig sobald live)
 
