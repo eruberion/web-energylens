@@ -11,6 +11,9 @@ Zielbetrieb: `https://energylens.app/` (geplant)
 ```
 site/
   index.html          — Landingpage (reines HTML, kein Framework)
+  robots.txt          — Crawler-Regeln mit Sitemap-Verweis
+  sitemap.xml         — Sitemap fuer energylens.app
+  apple-touch-icon.png — iOS-Homescreen-Icon
   assets/
     css/styles.css    — Styles
     images/           — App-Icons, Screenshots, Grafiken

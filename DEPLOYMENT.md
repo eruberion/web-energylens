@@ -15,6 +15,7 @@ Optionen laut Workspace-Doku:
 - Statische HTML/CSS-Landingpage, kein Build-Step
 - Kein Framework, keine Datenbank, keine serverseitige Logik
 - Assets unter `site/assets/`
+- SEO-/Plattformdateien im Web-Root: `robots.txt`, `sitemap.xml`, `apple-touch-icon.png`
 
 ## Lokale Prüfung
 
