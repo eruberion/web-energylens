@@ -7,6 +7,7 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 ## [Unreleased]
 
 - SEO-Basics ergänzt: `robots.txt`, `sitemap.xml`, Apple-Touch-Icon und Head-Link für iOS-Homescreen-Shortcuts.
+- CTA-Text im Download-Bereich neutralisiert: kein irreführender Kostenlos-Eindruck, Hinweis auf optionale In-App-Käufe ergänzt.
 - `PRODUCT.md` als fachlicher Produkt-Steckbrief für die EnergyLens-Landingpage mit Scope, Grenzen, Erfolgskriterien und Claim-Grenzen ergänzt.
 - `VERSION` als Repo-Level-SemVer-Quelle eingefuehrt.
 - Landingpage entlang `DESIGN.md` sichtbar verfeinert: Hero-Headline, App-Screenshot-Inszenierung, Energie-/Preis-Signature, Preview-Texte und Tibber-Trust-Sektion.
