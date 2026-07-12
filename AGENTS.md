@@ -25,3 +25,7 @@ find site -maxdepth 3 -type f | sort
 ```
 
 Bei UI-Aenderungen: Seite im Browser pruefen oder Screenshot erstellen.
+
+## Projekt-Closeout
+
+Vor Abschluss relevanter Arbeit das Workspace-Runbook `/Users/ai/.openclaw/workspace/workspace-docs/operations/PROJECT-CLOSEOUT-RUNBOOK.md` beachten. Mindestens pruefen: passende QS, Projekt-Doku, `CHANGELOG.md`, `VERSION` samt Spiegeln, zentrale Workspace-Doku bei Betriebs-/Statusaenderungen und Doku-Sync/Validatoren nach Markdown-Aenderungen.
