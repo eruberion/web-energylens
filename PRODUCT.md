@@ -12,6 +12,8 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 - App-Screens, Strompreis-/Verbrauchsnutzen und Tibber-Bezug glaubwuerdig zeigen.
 - Datenschutz- und Produktstatus klar kommunizieren.
 - Spaeter App-Store-, Support- und Rechtslinks sauber aufnehmen.
+- Bis zum verifizierten Store-Release jeden Download-CTA als nicht interaktiven
+  Coming-soon-Status darstellen.
 
 ## Grenzen
 
@@ -19,6 +21,8 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 - Keine Aussage, dass EnergyLens eine offizielle Tibber-App ist.
 - Keine Stromkostenersparnis versprechen, die nicht im Produkt belastbar belegt ist.
 - Keine rechtlichen Seiten oder Supportablaeufe doppelt pflegen; zentrale Links laufen ueber flowhrzn.ai bzw. projektspezifische Supportadresse.
+- Keine Referral-, Bonus-, Echtzeit- oder lokale-Exklusivitaets-Claims ohne
+  belastbare Produkt- beziehungsweise Vertragsgrundlage.
 
 ## Erfolgskriterien
 

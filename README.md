@@ -2,6 +2,8 @@
 
 Statische Landingpage für [EnergyLens](https://energylens.app) — die Strompreis- und Verbrauchs-App für Tibber-Nutzer.
 
+> **Aktuelle Version:** 0.1.3 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
+
 ## Live-URL
 
 Zielbetrieb: `https://energylens.app/` (geplant)
@@ -11,6 +13,7 @@ Zielbetrieb: `https://energylens.app/` (geplant)
 ```
 site/
   index.html          — Landingpage (reines HTML, kein Framework)
+  support.html        — stabile Support- und Kontaktadresse
   robots.txt          — Crawler-Regeln mit Sitemap-Verweis
   sitemap.xml         — Sitemap fuer energylens.app
   apple-touch-icon.png — iOS-Homescreen-Icon
@@ -27,11 +30,14 @@ AGENTS.md / CLAUDE.md — Agentenregeln für KI-gestützte Arbeit
 # Dateien prüfen
 find site -maxdepth 3 -type f | sort
 
-# Seite im Browser öffnen
-open site/index.html
+# deterministische Links-, Metadaten-, Asset- und Claim-Pruefung
+python3 scripts/check_site.py
+
+# danach lokal per HTTP im Browser pruefen
+python3 -m http.server 4173 --directory site
 ```
 
-Nach Änderungen: Seite im Browser prüfen oder Screenshot erstellen.
+Nach Änderungen: Checker ausführen und Desktop sowie Mobilansicht per HTTP im Browser prüfen.
 
 ## Regeln
 
