@@ -6,6 +6,26 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-07-13
+
+- Website-Version im Footer von Start- und Supportseite sichtbar gemacht und den Site-Checker gegen Drift zur `VERSION`-Quelle abgesichert.
+- App-Store-CTAs bis zum verifizierten Release durch einen nicht interaktiven
+  Coming-soon-Status ersetzt und den Launchstatus in Navigation und Hero
+  eindeutig gemacht.
+- Nicht belegte Referral-, Echtzeit- und lokale-Exklusivitaets-Claims entfernt
+  beziehungsweise auf stündliche Tibber-Preisdaten und geschützten
+  Gerätespeicher präzisiert.
+- Rechtslinks auf `flowhrzn.ai` zentralisiert und eine stabile, indexierbare
+  Supportseite mit sicherem Kontakt-Hinweis ergänzt.
+- Open-Graph-/Twitter-Metadaten und ein geprüftes Social Preview im Format
+  1200 × 630 hinzugefügt.
+- Absolute Canonical-/Social-URLs bleiben bis zur bestätigten Domainzuordnung
+  absichtlich deaktiviert; der Checker besitzt dafür ein striktes Produktions-Origin-Gate.
+- Deterministischen Site-Checker und GitHub-Actions-Gate für lokale Links,
+  Anker, Pflichtdateien, Metadaten, Preview-Dimension und Launch-Claims ergänzt.
+- Deployment bleibt wegen ungeklärter Domain-/Hosting-Zuordnung gesperrt; das
+  Runbook dokumentiert Preflight, Backup und Rollback.
+
 - SEO-Basics ergänzt: `robots.txt`, `sitemap.xml`, Apple-Touch-Icon und Head-Link für iOS-Homescreen-Shortcuts.
 - CTA-Text im Download-Bereich neutralisiert: kein irreführender Kostenlos-Eindruck, Hinweis auf optionale In-App-Käufe ergänzt.
 - `PRODUCT.md` als fachlicher Produkt-Steckbrief für die EnergyLens-Landingpage mit Scope, Grenzen, Erfolgskriterien und Claim-Grenzen ergänzt.
