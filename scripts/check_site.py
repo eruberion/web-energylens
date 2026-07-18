@@ -12,6 +12,10 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
+PUBLIC_URLS = ROOT / "PUBLIC-URLS.md"
+SUPPORT_URL = "https://energylens.app/support.html"
+PRIVACY_URL = "https://flowhrzn.ai/legal/datenschutz.html"
+SUPPORT_EMAIL = "hello@flowhrzn.ai"
 
 
 class PageParser(HTMLParser):
@@ -92,6 +96,20 @@ def main() -> int:
     for forbidden in ("diegobulach.com", "Startbonus", "Laden im", "href=\"#\""):
         if forbidden.lower() in index.lower():
             errors.append(f"site/index.html: verbotener oder irrefuehrender Inhalt: {forbidden}")
+    for secret_pattern in ("TIBBER_TOKEN", "sk_live_", "sk_test_", "PRIVATE KEY", "BEGIN RSA PRIVATE KEY"):
+        for candidate in SITE.rglob("*"):
+            if candidate.is_file() and candidate.suffix.lower() in {".html", ".css", ".js", ".txt", ".xml"}:
+                if secret_pattern.lower() in candidate.read_text(encoding="utf-8", errors="ignore").lower():
+                    errors.append(f"{candidate.relative_to(ROOT)}: verbotenes Secret-Muster: {secret_pattern}")
+    support = (SITE / "support.html").read_text(encoding="utf-8")
+    if SUPPORT_EMAIL not in support or "subject=EnergyLens%20Support" not in support:
+        errors.append("site/support.html: stabiler EnergyLens-Support-Mailto fehlt")
+    if PRIVACY_URL not in index or PRIVACY_URL not in support:
+        errors.append("site/index.html/site/support.html: zentrale Datenschutz-URL fehlt")
+    if "./support.html" not in index:
+        errors.append("site/index.html: lokaler Supportlink fehlt")
+    if "Noch nicht im App Store" not in index or "app-store-btn--disabled" not in index:
+        errors.append("site/index.html: Coming-soon-App-Store-Status fehlt")
 
     index_meta = pages[(SITE / "index.html").resolve()].meta
     social_image = (
@@ -132,6 +150,13 @@ def main() -> int:
     for required in (SITE / "support.html", SITE / "robots.txt", SITE / "sitemap.xml"):
         if not required.exists():
             errors.append(f"Pflichtdatei fehlt: {required.relative_to(ROOT)}")
+    if not PUBLIC_URLS.exists():
+        errors.append("PUBLIC-URLS.md fehlt")
+    else:
+        public_urls = PUBLIC_URLS.read_text(encoding="utf-8")
+        for expected in (SUPPORT_URL, PRIVACY_URL, SUPPORT_EMAIL, "App Store Connect"):
+            if expected not in public_urls:
+                errors.append(f"PUBLIC-URLS.md: erwarteter Eintrag fehlt: {expected}")
 
     if errors:
         print("EnergyLens Site-Check fehlgeschlagen:", file=sys.stderr)

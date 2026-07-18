@@ -6,6 +6,19 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-07-18
+
+- Deployment-Runbook konkretisiert: Source-of-truth-Branch, Publish-Verzeichnis,
+  DNS-/TLS-Verantwortung, Cache-Invalidierung, Preflight, Live-Smoke und
+  Rollback fuer die statische `energylens.app`-Landingpage dokumentiert.
+- Verbindliche Public-URL-Matrix fuer App Store Connect vorbereitet:
+  Marketing-, Support- und Datenschutz-URL inklusive Status, Scope und
+  fachkundiger Rechtsfreigabegrenze.
+- Site-Checker gegen Drift bei Support-/Privacy-URL, verbotenen Secret-Mustern,
+  Coming-soon-App-Store-Status und URL-Matrix gehaertet.
+- Supportseite um Scope- und Datenschutz-Hinweis erweitert; sichtbare
+  Website-Version auf `0.1.4` synchronisiert.
+
 ## [0.1.3] - 2026-07-13
 
 - Website-Version im Footer von Start- und Supportseite sichtbar gemacht und den Site-Checker gegen Drift zur `VERSION`-Quelle abgesichert.

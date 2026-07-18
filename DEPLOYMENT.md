@@ -6,7 +6,7 @@
 
 Geplantes Ziel: `https://energylens.app/` (statische Landingpage).
 
-Aktueller Release Candidate: `0.1.3`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel.
+Aktueller Release Candidate: `0.1.4`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel.
 
 Beim Audit am 13.07.2026 lieferte die Domain nicht den durch dieses Repository
 kontrollierten Stand. Ein Upload ist deshalb bis zur bestaetigten DNS-/Hosting-
@@ -15,6 +15,17 @@ Zuordnung gesperrt; vorhandene fremde Inhalte duerfen nicht ueberschrieben werde
 Optionen laut Workspace-Doku:
 - Hostinger klassisches Hosting (statische Seite, kein Node.js nötig)
 - GitHub Pages als temporäre Alternative
+
+## Source of Truth
+
+- GitHub-Repo: `eruberion/web-energylens`
+- Branch: `main`
+- Publish-Verzeichnis: `site/`
+- Build-Step: keiner; es werden ausschliesslich statische Dateien ausgeliefert.
+- Deployment-Inhalt: nur Dateien unter `site/`, keine Repo-Metadaten,
+  keine Doku-Quellen, keine Zugangsdaten.
+- Verantwortlicher Domain-/DNS-Entscheid: Diego; OpenClaw bereitet nur den
+  geprueften statischen Stand vor.
 
 ## Tech Stack
 
@@ -27,21 +38,32 @@ Optionen laut Workspace-Doku:
 
 ```bash
 python3 scripts/check_site.py
+python3 scripts/check_site.py --production-origin https://energylens.app
 python3 -m http.server 4173 --directory site
 ```
+
+Der zweite Checker ist erst freigabefaehig, wenn Canonical-, OG- und
+Twitter-URLs bewusst auf die bestaetigte Produktions-Origin umgestellt wurden.
+Bis dahin darf er als erwartetes Produktions-Gate fehlschlagen.
 
 ## Deploy-Regeln (gültig sobald Deployment-Ziel feststeht)
 
 1. Domain-Inhaber, DNS-Ziel und Hosting-Verzeichnis schriftlich bestaetigen.
-2. Erst danach Canonical, `og:url`, `og:image` und `twitter:image` auf die
+2. A-/AAAA-/CNAME-Ziel, HTTPS-Erzwingung, Zertifikatsaussteller und
+   Cache-/CDN-Verhalten dokumentieren.
+3. Erst danach Canonical, `og:url`, `og:image` und `twitter:image` auf die
    bestaetigte HTTPS-Origin setzen und mit
    `python3 scripts/check_site.py --production-origin https://energylens.app`
    prüfen. Vor der Domainfreigabe bleiben die Bildpfade absichtlich relativ.
-3. `python3 scripts/check_site.py` und Desktop-/Mobil-Sichtpruefung bestehen lassen.
-4. Snapshot/Backup des aktuell ausgelieferten Webroots erstellen.
-5. Ausschliesslich den Inhalt von `site/` in einen eindeutig zugeordneten Webroot ausrollen.
-6. Canonical-, OG-, Support- und zentrale Rechtslinks ueber HTTPS pruefen.
-7. Bei Abweichung sofort auf den vorherigen Webroot-Snapshot zurueckrollen.
+4. `python3 scripts/check_site.py`, Desktop- und Mobil-Sichtpruefung bestehen lassen.
+5. Preflight auf verbotene Secrets/Repo-Artefakte:
+   `find site -maxdepth 3 -type f | sort` und keine `.git`, `.env`,
+   Tokens, Backups oder privaten Daten im Webroot.
+6. Snapshot/Backup des aktuell ausgelieferten Webroots erstellen.
+7. Ausschliesslich den Inhalt von `site/` in einen eindeutig zugeordneten Webroot ausrollen.
+8. Provider-/CDN-Cache invalidieren oder TTL abwarten; danach Live-Smoke ausfuehren.
+9. Canonical-, OG-, Support-, Datenschutz- und zentrale Rechtslinks ueber HTTPS pruefen.
+10. Bei Abweichung sofort auf den vorherigen Webroot-Snapshot zurueckrollen.
 
 ## Health-Check (gültig sobald live)
 
@@ -51,7 +73,15 @@ Erst nach bestaetigter Domain-Zuordnung ausfuehren:
 # Beispiel nach Livegang:
 curl -I https://energylens.app/
 curl -I https://energylens.app/support.html
+curl -I https://flowhrzn.ai/legal/datenschutz.html
+curl -I https://flowhrzn.ai/legal/impressum.html
 ```
+
+Browser-Smoke:
+- Startseite: Titel, Hero, Coming-soon-Status, Supportlink und Footer-Version pruefen.
+- Support: Mailto-Link, Datenschutzlink und Hinweis gegen Token-/Passwortversand pruefen.
+- Mobil: kein horizontaler Overflow, CTA nicht als aktiver App-Store-Download.
+- Social: `og:image`/`twitter:image` nach Produktionsfreigabe absolut und erreichbar.
 
 ## Späterer Zielbetrieb
 
@@ -59,3 +89,14 @@ curl -I https://energylens.app/support.html
 - HTTPS über Provider-Managed-SSL
 - Impressum und Datenschutz auf `flowhrzn.ai` zentral verlinkt
 - Vor Launch: Rechtsseiten auf `flowhrzn.ai` müssen final und live sein
+
+## Rollback
+
+Rollback ist Webroot-basiert:
+
+1. Vor jedem Upload den bestehenden Webroot als datierten Snapshot sichern.
+2. Bei falscher Domainzuordnung, kaputtem TLS, falschen Rechtslinks oder
+   fremden Inhalten sofort Snapshot zurueckspielen.
+3. Danach Cache invalidieren und Health-Check erneut laufen lassen.
+4. Fehlerursache in `CHANGELOG.md` oder einem Issue dokumentieren, bevor ein
+   zweiter Upload erfolgt.

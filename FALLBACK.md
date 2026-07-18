@@ -24,4 +24,6 @@ Die Landingpage ist von der iOS-App (EnergyLens) technisch unabhängig. Ein Ausf
 
 ## Deployment-Ziel
 
-> TBD — noch nicht final entschieden. Dieser Abschnitt wird nach Deploy-Entscheidung ergänzt.
+Geplantes Ziel ist `https://energylens.app/`. Bis DNS-/Hosting-Zuordnung
+bestaetigt ist, bleibt der oeffentliche Upload gesperrt. Verbindliche
+Deployment-, Smoke- und Rollback-Regeln stehen in `DEPLOYMENT.md`.

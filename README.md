@@ -2,7 +2,7 @@
 
 Statische Landingpage für [EnergyLens](https://energylens.app) — die Strompreis- und Verbrauchs-App für Tibber-Nutzer.
 
-> **Aktuelle Version:** 0.1.3 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
+> **Aktuelle Version:** 0.1.4 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
 
 ## Live-URL
 
@@ -21,6 +21,7 @@ site/
     css/styles.css    — Styles
     images/           — App-Icons, Screenshots, Grafiken
 DESIGN.md             — Design-Richtlinien und visuelle Direktionen
+PUBLIC-URLS.md        — verbindliche Privacy-/Support-/App-Store-URL-Matrix
 AGENTS.md / CLAUDE.md — Agentenregeln für KI-gestützte Arbeit
 ```
 

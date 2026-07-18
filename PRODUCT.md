@@ -14,6 +14,8 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 - Spaeter App-Store-, Support- und Rechtslinks sauber aufnehmen.
 - Bis zum verifizierten Store-Release jeden Download-CTA als nicht interaktiven
   Coming-soon-Status darstellen.
+- App Store Connect darf nur die in `PUBLIC-URLS.md` gepflegten URL-Ziele
+  verwenden.
 
 ## Grenzen
 
@@ -23,6 +25,8 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 - Keine rechtlichen Seiten oder Supportablaeufe doppelt pflegen; zentrale Links laufen ueber flowhrzn.ai bzw. projektspezifische Supportadresse.
 - Keine Referral-, Bonus-, Echtzeit- oder lokale-Exklusivitaets-Claims ohne
   belastbare Produkt- beziehungsweise Vertragsgrundlage.
+- Kein Supportkanal darf zur Einsendung von Tibber-Token, Passwoertern oder
+  sonstigen Zugangsdaten auffordern.
 
 ## Erfolgskriterien
 
