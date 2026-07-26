@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 PUBLIC_URLS = ROOT / "PUBLIC-URLS.md"
 SUPPORT_URL = "https://energylens.app/support.html"
+PRODUCTION_ORIGIN = "https://energylens.app"
 PRIVACY_URL = "https://flowhrzn.ai/legal/datenschutz.html"
 SUPPORT_EMAIL = "hello@flowhrzn.ai"
 
@@ -112,11 +113,12 @@ def main() -> int:
         errors.append("site/index.html: Coming-soon-App-Store-Status fehlt")
 
     index_meta = pages[(SITE / "index.html").resolve()].meta
-    social_image = (
-        f"{args.production_origin.rstrip('/')}/assets/images/energylens-social-preview.png"
-        if args.production_origin
-        else "./assets/images/energylens-social-preview.png"
-    )
+    canonical = pages[(SITE / "index.html").resolve()].canonical
+    if args.production_origin:
+        expected_origin = args.production_origin.rstrip("/")
+    else:
+        expected_origin = PRODUCTION_ORIGIN
+    social_image = f"{expected_origin}/assets/images/energylens-social-preview.png"
     required_meta = {
         "og:image": social_image,
         "og:image:width": "1200",
@@ -128,17 +130,15 @@ def main() -> int:
         if index_meta.get(key) != expected:
             errors.append(f"site/index.html: {key} muss {expected!r} sein")
 
-    if args.production_origin:
-        origin = args.production_origin.rstrip("/")
-        if urlparse(origin).scheme != "https" or not urlparse(origin).hostname:
-            errors.append("--production-origin muss eine absolute HTTPS-Origin sein")
-        expected_image = f"{origin}/assets/images/energylens-social-preview.png"
-        if index_meta.get("og:image") != expected_image or index_meta.get("twitter:image") != expected_image:
-            errors.append("Produktions-OG-/Twitter-Bilder muessen absolute URLs der bestaetigten Origin verwenden")
-        if index_meta.get("og:url") != f"{origin}/":
-            errors.append("og:url fehlt oder passt nicht zur bestaetigten Produktions-Origin")
-        if pages[(SITE / "index.html").resolve()].canonical != f"{origin}/":
-            errors.append("Canonical fehlt oder passt nicht zur bestaetigten Produktions-Origin")
+    if urlparse(expected_origin).scheme != "https" or not urlparse(expected_origin).hostname:
+        errors.append("Produktions-Origin muss eine absolute HTTPS-Origin sein")
+    expected_image = f"{expected_origin}/assets/images/energylens-social-preview.png"
+    if index_meta.get("og:image") != expected_image or index_meta.get("twitter:image") != expected_image:
+        errors.append("Produktions-OG-/Twitter-Bilder muessen absolute URLs der bestaetigten Origin verwenden")
+    if index_meta.get("og:url") != f"{expected_origin}/":
+        errors.append("og:url fehlt oder passt nicht zur bestaetigten Produktions-Origin")
+    if canonical != f"{expected_origin}/":
+        errors.append("Canonical fehlt oder passt nicht zur bestaetigten Produktions-Origin")
 
     preview = SITE / "assets/images/energylens-social-preview.png"
     try:

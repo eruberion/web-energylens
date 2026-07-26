@@ -2,15 +2,18 @@
 
 ## Aktueller Zielbetrieb
 
-> BLOCKIERT — Deployment-Ziel und Domain-Zuordnung sind noch nicht final entschieden.
+> BLOCKIERT — Domain ist erreichbar, aber der Live-Inhalt ist noch nicht
+> repo-synchron ausgeliefert.
 
-Geplantes Ziel: `https://energylens.app/` (statische Landingpage).
+Ziel: `https://energylens.app/` (statische Landingpage).
 
 Aktueller Release Candidate: `0.1.4`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel.
 
-Beim Audit am 13.07.2026 lieferte die Domain nicht den durch dieses Repository
-kontrollierten Stand. Ein Upload ist deshalb bis zur bestaetigten DNS-/Hosting-
-Zuordnung gesperrt; vorhandene fremde Inhalte duerfen nicht ueberschrieben werden.
+Beim Audit am 26.07.2026 loesten `energylens.app` und `www.energylens.app`
+per HTTPS auf, der Live-HTML-Stand war aber weiterhin nicht der durch dieses
+Repository kontrollierte Stand. Ein Upload bleibt bis zur bestaetigten
+Webroot-/Hosting-Zuordnung gesperrt; vorhandene fremde Inhalte duerfen nicht
+unkontrolliert ueberschrieben werden.
 
 Optionen laut Workspace-Doku:
 - Hostinger klassisches Hosting (statische Seite, kein Node.js nötig)
@@ -42,19 +45,19 @@ python3 scripts/check_site.py --production-origin https://energylens.app
 python3 -m http.server 4173 --directory site
 ```
 
-Der zweite Checker ist erst freigabefaehig, wenn Canonical-, OG- und
-Twitter-URLs bewusst auf die bestaetigte Produktions-Origin umgestellt wurden.
-Bis dahin darf er als erwartetes Produktions-Gate fehlschlagen.
+Der zweite Checker ist das Produktions-Metadaten-Gate. Er muss gruene
+Canonical-, `og:url`-, Open-Graph- und Twitter-URLs fuer `energylens.app`
+erzwingen, bevor die Seite livegestellt oder in App Store Connect hinterlegt wird.
 
 ## Deploy-Regeln (gültig sobald Deployment-Ziel feststeht)
 
 1. Domain-Inhaber, DNS-Ziel und Hosting-Verzeichnis schriftlich bestaetigen.
 2. A-/AAAA-/CNAME-Ziel, HTTPS-Erzwingung, Zertifikatsaussteller und
    Cache-/CDN-Verhalten dokumentieren.
-3. Erst danach Canonical, `og:url`, `og:image` und `twitter:image` auf die
-   bestaetigte HTTPS-Origin setzen und mit
+3. Canonical, `og:url`, `og:image` und `twitter:image` muessen auf die
+   bestaetigte HTTPS-Origin zeigen und mit
    `python3 scripts/check_site.py --production-origin https://energylens.app`
-   prüfen. Vor der Domainfreigabe bleiben die Bildpfade absichtlich relativ.
+   geprueft werden.
 4. `python3 scripts/check_site.py`, Desktop- und Mobil-Sichtpruefung bestehen lassen.
 5. Preflight auf verbotene Secrets/Repo-Artefakte:
    `find site -maxdepth 3 -type f | sort` und keine `.git`, `.env`,
