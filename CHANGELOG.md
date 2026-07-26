@@ -6,6 +6,8 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-07-26
+
 - FAQ- und Kontaktbereich auf der Startseite ergänzt: Tibber-Vertrag, Access
   Token, Pulse-Abhängigkeit, iOS-Version, Premium-Richtung, Datenspeicherung,
   Android-Status und sichere Kontaktaufnahme.

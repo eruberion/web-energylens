@@ -2,7 +2,7 @@
 
 Statische Landingpage für [EnergyLens](https://energylens.app) — die Strompreis- und Verbrauchs-App für Tibber-Nutzer.
 
-> **Aktuelle Version:** 0.1.4 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
+> **Aktuelle Version:** 0.1.5 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
 
 ## Live-URL
 
