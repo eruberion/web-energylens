@@ -6,6 +6,19 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+- FAQ- und Kontaktbereich auf der Startseite ergänzt: Tibber-Vertrag, Access
+  Token, Pulse-Abhängigkeit, iOS-Version, Premium-Richtung, Datenspeicherung,
+  Android-Status und sichere Kontaktaufnahme.
+- iOS-Mindestversionsclaim bewusst entschärft, bis der App-Store-Build final
+  gegen die EnergyLens-iOS-Konfiguration abgeglichen ist.
+- Produktions-Metadaten der Startseite für `https://energylens.app/`
+  vervollständigt: Canonical-URL, `og:url` sowie absolute Open-Graph- und
+  Twitter-Previewbilder.
+- Site-Checker an die bestätigte Produktions-Origin angepasst, damit lokale und
+  produktionsnahe Metadatenprüfungen dieselbe Canonical-Quelle nutzen.
+- Deployment- und Public-URL-Doku aktualisiert: Domain ist erreichbar, der
+  Live-Inhalt bleibt aber bis zum repo-synchronen Webroot-Abgleich blockiert.
+
 ## [0.1.4] - 2026-07-18
 
 - Deployment-Runbook konkretisiert: Source-of-truth-Branch, Publish-Verzeichnis,

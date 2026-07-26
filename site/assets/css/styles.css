@@ -523,6 +523,74 @@ body {
   line-height: 1.65;
 }
 
+/* ── FAQ and contact ── */
+.faq-section {
+  background:
+    linear-gradient(180deg, rgba(15,24,36,0.18), transparent 38%),
+    var(--bg);
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: 28px;
+  align-items: start;
+}
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+.faq-list details {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(15,24,36,0.72);
+  overflow: hidden;
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 20px;
+  color: var(--text);
+  font-weight: 600;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: '+';
+  float: right;
+  color: var(--accent);
+  font-weight: 700;
+}
+.faq-list details[open] summary::after { content: '–'; }
+.faq-list p {
+  padding: 0 20px 18px;
+  color: var(--text-2);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid rgba(34,211,165,0.2);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34,211,165,0.1), transparent 36%),
+    var(--surface);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.18);
+}
+.contact-panel h3 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+.contact-panel p {
+  color: var(--text-2);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.contact-panel .button {
+  justify-content: center;
+}
+
 /* ── Tibber badge ── */
 .integration-badge {
   display: inline-flex;
@@ -674,6 +742,7 @@ body {
   .hero-proof { justify-content: center; }
   .app-icon { width: 160px; height: 160px; border-radius: 36px; }
   .feature-grid { grid-template-columns: 1fr; }
+  .faq-layout { grid-template-columns: 1fr; }
   .trust-layout { grid-template-columns: 1fr; gap: 40px; }
   .trust-section .reveal { text-align: left; }
   .stats-bar__inner { grid-template-columns: 1fr; gap: 24px; }
