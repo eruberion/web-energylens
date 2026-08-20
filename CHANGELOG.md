@@ -6,6 +6,8 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
+- `DESIGN.md` als vollstaendiges Design-System V2 fuer Landingpage, Support, Trust-/Claim-Grenzen und responsive Live-QA aktualisiert; reale HTML/CSS-Tokens, Breakpoints, Komponentenstates, Accessibility und No-Gos sind jetzt explizit. Site-Code und Version bleiben unveraendert.
+
 ## [0.1.5] - 2026-07-26
 
 - FAQ- und Kontaktbereich auf der Startseite ergänzt: Tibber-Vertrag, Access

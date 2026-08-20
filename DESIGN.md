@@ -1,132 +1,140 @@
-# DESIGN.md — EnergyLens Landing Page
+# EnergyLens Web Design-System V2
 
-## Zweck
-Dieses Dokument beschreibt die visuelle Richtung der EnergyLens-Landing-Page, damit sie die App glaubwürdig und hochwertig verkauft, ohne wie eine generische SaaS-Seite oder ein Tech-Startup-Baukasten auszusehen.
+Stand: 2026-08-20
+Status: verbindliche Designquelle fuer die statische Produkt-, Support- und Vertrauensoberflaeche
 
-Abgeleitet aus:
-- `site/index.html`
-- bestehender App-Markenwirkung von EnergyLens
-- vorhandenen Produktzielen rund um Strompreise, Verbrauch und Verständlichkeit
+## Scope und Oberflaechen
 
-## Produktcharakter
-EnergyLens hilft Menschen, Energiepreise und Verbrauch besser zu verstehen.
-Die Landing Page muss deshalb vor allem:
-- Klarheit vermitteln
-- Vertrauen aufbauen
-- die App hochwertig zeigen
-- technische Kompetenz einfach übersetzen
-- nicht nerdig oder erklärbärig wirken
+Das System gilt fuer:
 
-## Zielbild
-**Ruhige Energie-Intelligenz statt technische Härte.**
+- Navigation, Hero, Produktvorschau und Coming-soon-CTA
+- App-Screenshot-/Phone-Inszenierung, Zahlen-/Trust-Streifen und Featurebereiche
+- Tibber-/Datenschutz-Erklaerung, FAQ und Kontakt
+- Supportseite, Fehler-/Fallback-Seiten und Social Preview
+- Desktop-, Tablet- und Mobile-Darstellung der statischen Site
 
-Die aktuelle Landing Page nutzt bewusst eine dunkle, hochwertige Produktbühne:
-ruhiger Night-Dashboard-Charakter, klare App-Screens, grün-türkise Energieakzente
-und warme Preis-/Zeit-Hinweise. Sie soll eher wie ein vertrauenswürdiges
-iOS-Energiecockpit wirken als wie eine generische SaaS-Seite.
+Die Website vermarktet und erklaert die iOS-App. Sie ist weder App-Dashboard noch Store-Listing und darf keine ungepruefte Verfuegbarkeit, Echtzeitfunktion, Einsparung, kostenlose Nutzung oder offizielle Tibber-Zugehoerigkeit behaupten.
 
-## Visuelle Richtung
+## Leitidee und Prinzipien
 
-### Bildsprache
-- dunkel, modern, ruhig und hochwertig
-- große Luft im Hero
-- App-Screens als Vertrauensbeweis
-- weiche dunkle Flächen, klare türkis-grüne Akzentfarbe und sparsame warme Highlights
-- Fokus auf Nutzen statt Buzzwords
+**Energy after dark:** Eine konzentrierte, technisch vertrauenswuerdige Nachtoberflaeche, in der Mint-Energiepfade die App-Idee erklaeren.
 
-### Stimmung
-- verständlich
-- modern
-- ruhig
-- kompetent
-- alltagstauglich
-- vertrauenswürdig
+1. Nutzen und Launchstatus sind im ersten Viewport eindeutig.
+2. Produktbilder belegen reale Funktionen; sie ersetzen keine erklaerende Copy.
+3. Dunkle Flaechen und Mint schaffen Eigenstaendigkeit, aber Lesbarkeit geht vor Glow.
+4. Datenschutz, Token und Tibber-Grenze sind Produktargumente, keine Fussnoten.
+5. FAQ und Support beantworten reale Unsicherheiten ohne Marketinguebertreibung.
 
-## Designprinzipien
+## Farben und semantische Tokens
 
-### 1. Die App muss der Held sein
-Nicht Textwände, sondern Screens, Nutzen und klare Struktur sollen tragen.
+Implementierungsquelle: `site/assets/css/styles.css`; Struktur und Copy liegen in `site/index.html`.
 
-### 2. Energie darf nicht nach Ingenieurs-UI aussehen
-Das Produkt muss technische Daten übersetzen, nicht technische Härte reproduzieren.
+| Rolle | Token | Wert / Verwendung |
+|---|---|---|
+| Seitenhintergrund | `--bg` | `#080D14` |
+| Primaerflaeche | `--surface` | `#0F1824` |
+| Erhoehte Flaeche | `--surface-2` | `#161F2E` |
+| Linie | `--border` | `rgba(255,255,255,.07)` |
+| Primaertext | `--text` | `#F1F5F9` |
+| Sekundaertext | `--text-2` | `#94A3B8` |
+| Gedämpfter Text | `--muted` | `#475569` |
+| Primaerakzent | `--accent` | `#22D3A5` |
+| Akzent dunkel | `--accent-dk` | `#16A37E` |
+| Warmer Hinweis | `--warm` | `#F59E0B` |
 
-### 3. Vertrauen vor Marketing-Lärm
-Keine aggressiven Growth-Muster, keine überladenen Hero-Versprechen.
+- Mint markiert Primaeraktion, Energiepfad und positive Produktinformation.
+- Warm/Orange kennzeichnet Launch-/Pruefhinweise, nicht generisch jede wichtige Zahl.
+- Fehler verwendet eine kontrastreiche rote Systemrolle mit Text/Icon; Erfolg und Warnung sind niemals farbexklusiv.
+- Glow bleibt lokal an Hero/Phone-Stage und darf keinen Textkontrast reduzieren.
 
-### 4. Ein Feature nach dem anderen verkaufen
-Preis, Visualisierung, Vergleich, Widgets — jeweils klar, verständlich, konkret.
+## Typografie
 
-### 5. Dunkel heißt nicht dramatisch
-Der dunkle Look bleibt ruhig und lesbar: keine lauten Neonflächen, keine
-dominanten Gradienten, keine übertriebene Energie-/Blitzsymbolik.
+- Lokal gebuendelte Inter-Schnitte 400 / 500 / 600 / 700; System-Fallback muss dieselbe Hierarchie erhalten.
+- Hero-H1: responsive Displaygroesse, stark gewichtet, kurze Zeilen und klarer Nutzen.
+- Section-H2: praegnante, aber kleinere Stufe; Featuretitel deutlich vom Body getrennt.
+- Body: 16–18 px mit ruhiger Zeilenhoehe; FAQ/Support nicht in Kleindruck.
+- Meta/Status: mindestens 14 px und semibold, wenn launchrelevant.
+- Zahlen und Energieeinheiten bleiben gemeinsam lesbar; keine Zahl ohne Zeitraum/Einheit.
+- Textbreite wird begrenzt, damit Erklaerungen nicht ueber die gesamte 1100-px-Flaeche laufen.
 
-## Komponenten-Richtung
+## Layout, Abstand und Responsive
 
-### Hero
-- große klare Headline
-- App-Screenshot als primärer Beweis
-- CTA sichtbar, aber nicht aufdringlich
-- kurze Nutzenbotschaft statt langer Story
-- schwebende Preis-/Zeit-Meter als schnelle Produktbeweise
-- Proof-Chips für lokale Token-Speicherung, iOS-Status und Widget-Roadmap
+Verifizierte Baseline:
 
-### Preview-Bereich
-- Screens sauber gerahmt
-- Light/Dark-Mode und Kernfeatures klar vergleichbar
-- keine visuelle Unruhe zwischen den Devices
+- Inhaltsbreite: maximal 1100 px
+- Navigation: ca. 64 px Hoehe
+- Desktop-Hero: zwei Spalten aus Copy und Phone-Stage
+- Phone-Stage: ca. 420 × 560 px; Device-Darstellung ca. 282 px breit
+- Feature-/FAQ-Bereiche: zwei Spalten auf Desktop
+- Breakpoints: 768 px und 460 px
 
-### Feature-Karten
-- einfach, verständlich, alltagsnah
-- kein Marketingsprech
-- Icons klar und ruhig
+Regeln:
 
-### Tibber-Integration
-- muss Vertrauen auslösen
-- Sicherheit, Datenherkunft und Aktualität klar benennen
-- nicht wie eine technische API-Ecke wirken
+- Desktop: Copy zuerst in Leserichtung, Produktvorschau als Beleg daneben.
+- Unter 768 px: Hero, Features und FAQ einspaltig; Navigation reduziert Links statt Text/CTA zu quetschen.
+- Unter 460 px: Aussenraum und Displaygroessen sinken, Touchziele bleiben mindestens 44 × 44 px.
+- Kein horizontales Scrollen durch Phone-Stage, Glow oder lange URLs.
+- Abschnitte haben deutlich mehr vertikalen als inneren Card-Abstand; Cards werden nicht in jeder Ebene verschachtelt.
+- Supporttexte nutzen lineare Lesereihenfolge und sichtbare Ruecknavigation.
 
-### Stats / Trust
-- kurze Statusleisten und Trust-Cards statt langer Erklärtexte
-- lokale Speicherung und Datenherkunft sichtbar, aber nicht alarmistisch erklären
-- Roadmap-Punkte klar als geplant markieren, nicht als bereits ausgeliefert verkaufen
+## Komponenten und Zustaende
 
-## Animation / Motion
-Für die Landing Page ist `motion` bzw. ähnliche Bewegung **fachlich sinnvoll**, wenn die Seite später als React-Projekt gebaut oder umgebaut wird.
+### Navigation und CTA
 
-### Sinnvoll für
-- Hero-Reveal
-- saubere Scroll-Reveals
-- Screenshot-Transitions
-- CTA-/Hover-Feedback
-- leichte Parallax-/Layer-Bewegung sehr sparsam
+- Logo/Wortmarke, Ankerlinks und Launchstatus bilden eine kompakte Leiste.
+- Aktueller Coming-soon-Zustand ist nicht interaktiv und sieht nicht wie ein funktionierender Store-Download aus.
+- Ein kuenftiger Store-Link darf erst nach verifiziertem Ziel, Claim- und Live-QA aktiv werden.
 
-### Nicht sinnvoll für
-- übertriebene Scrollytelling-Effekte
-- hektische Energie-/Blitz-Animationen
-- animierten Tech-Kitsch
+### Hero und Phone-Stage
 
-### Regel
-Die Seite soll hochwertig wirken, nicht laut.
+- Hero erklaert Nutzen, Tibber-Voraussetzung und Plattformstatus.
+- Phone/Screenshot ist ein reales Produktasset mit sinnvollem Beschnitt und Alt-Text; keine erfundene App-UI.
+- Bei fehlendem Bild bleibt Copy, Status und CTA vollstaendig; kein leerer schwarzer Container.
 
-## Do / Don't
+### Trust, Features und FAQ
 
-### Do
-- App-Screens sauber inszenieren
-- verständliche Sprache priorisieren
-- ruhige, hochwertige Energie-Bildsprache mit klarem Kontrast nutzen
-- Nutzen immer konkreter als Technik formulieren
-- App-Store-CTA und Produktstatus ehrlich einordnen
+- Trust-/Stat-Zeilen nennen Einheit und belegbare Bedeutung.
+- Feature-Card: Icon, konkreter Titel, kurze Erklaerung; kein generisches KI-/Realtime-Versprechen.
+- FAQ-Antworten sind per Tastatur und Screenreader zugaenglich; geoeffneter Zustand ist semantisch erkennbar.
+- Kontakt/Support zeigt sichere Kontaktart und Produktgrenze, ohne Zugangsdaten oder Token abzufragen.
 
-### Don't
-- Hacker-/Tech-Look
-- überladene Gradient-Show
-- zu viele gleich laute CTAs
-- abstrakte Zukunfts-Buzzwords ohne Produktbezug
-- Roadmap-Features als fertige Funktionen darstellen
+### Loading, Fehler und externe Ziele
 
-## Naheliegende Umsetzungshebel
-- Hero- und Screenshot-Inszenierung weiter verfeinern
-- visuelle Beziehung zwischen Landing Page und App noch enger ziehen
-- Vertrauensbeweise (Datenschutz, Tibber-Bezug, App-Store) klarer staffeln
-- bei React-Neuaufbau gezielte Motion-Nutzung einplanen
-- App-Store-Link, Launch-Status und Widget-Roadmap vor öffentlicher Bewerbung final prüfen
+- Statische Kernseite braucht keinen kuenstlichen Loader.
+- Fehlendes Asset wird im Site-Check und visuell als Fehler behandelt.
+- Externe Rechts-/Support-/Store-Ziele erhalten sichtbaren Linktext und werden vor Release geprueft.
+- Social Preview hat eigenstaendigen Zuschnitt; sie ist kein Screenshot der gesamten Seite.
+
+## Accessibility und Motion
+
+- Ziel: WCAG 2.2 AA fuer Text, Fokus, Landmarken und interaktive Controls.
+- Sichtbarer `:focus-visible`-Ring; Skip-Link und semantische Heading-Reihenfolge.
+- FAQ-/Nav-Zustaende verwenden `aria-expanded`/passende Semantik, wenn interaktiv.
+- Bilder haben zweckbezogenen Alt-Text; dekorative Glows sind fuer Assistenztechnik verborgen.
+- Reveal-/Glow-/Hover-Motion ist optional. `prefers-reduced-motion` muss sie auf direkte statische Zustaende reduzieren.
+- Keine dauernd pulsierende Kernaktion; Animation darf Launchstatus oder Lesereihenfolge nicht verschleiern.
+- Kontrast wird auf realem Hintergrund, nicht nur gegen Tokenwerte geprueft.
+
+## No-Gos
+
+- Keine App-Store-, Echtzeit-, Gratis-, Einspar- oder Android-Aussage ohne belegten Produktstand.
+- Keine offizielle Tibber-Anmutung und keine fremden Markenassets als eigenes Branding.
+- Kein generisches AI-Glow-/Cyberpunk-Layout; Mint-Energie bleibt diszipliniert.
+- Keine erfundene App-Oberflaeche oder unberechtigtes Stockbild.
+- Keine leere Screenshot-/Embed-Region als bestandene QA.
+- Keine Kontaktform, die Tibber-Token oder andere Geheimnisse anfordert.
+- Keine Fonts, Tracker oder Drittanbieter-Embeds ohne Datenschutz-/Performanceentscheidung.
+
+## Agenten- und QA-Leitfaden
+
+1. Vor sichtbaren Aenderungen `DESIGN.md`, `PRODUCT.md`, `README.md`, betroffene HTML/CSS/Assets und Claim-Grenzen lesen.
+2. `design-agent` im passenden Modus verwenden; Wartung bleibt Konformitaetsarbeit, Gold/Redesign braucht ausdruecklichen Auftrag.
+3. Visuellen Akzeptanzvertrag festhalten: Zielregion, Copy-/CTA-Hierarchie, unveraenderte Claims, messbare Invariante und Asset-/Link-Fallback.
+4. Site-Checker und semantische Browser-QA ausfuehren. Zielregion bei 1440, 768 und 375 px, Tastatur und Reduce Motion pruefen.
+5. Screenshot-/Phone-Asset auf natuerliche Groesse, Beschnitt, Alt-Text und Fallback pruefen; FAQ, Anker, Kontakt und externe Links ausloesen.
+6. Screenshots tatsaechlich ansehen; HTTP 200, fehlerfreie Konsole oder erzeugte Datei allein sind kein visueller Pass.
+7. Neue dauerhafte Token-, Komponenten- oder Claim-Darstellung hier und in der Implementierung synchronisieren.
+
+## Pflege und Quellenhierarchie
+
+`DESIGN.md` ist der Designvertrag. `site/index.html`, Supportseite und Assets sind Implementierungsquellen; `PRODUCT.md` und gepruefte App-Dokumentation bestimmen Produktclaims. Bei Drift darf Design keinen Claim „schoener“ machen: Quelle pruefen und Vertrag plus Implementierung im selben Change angleichen.
