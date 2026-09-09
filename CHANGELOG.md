@@ -9,6 +9,13 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 - `DESIGN.md` als vollstaendiges Design-System V2 fuer Landingpage, Support, Trust-/Claim-Grenzen und responsive QA aktualisiert; reale HTML/CSS-Tokens, Breakpoints, Komponentenstates, bekannte Accessibility-Luecken und No-Gos sind jetzt explizit. Site-Code und Version bleiben unveraendert.
 - Adversarial-/Self-Eval-Review gegen die gerenderte HTML-/CSS-/JavaScript-Struktur: fehlende Fokus-, Reduced-Motion- und No-JavaScript-Reveal-Absicherungen bleiben ehrlich als bestehende Luecken dokumentiert; die Doku-Aktualisierung behauptet keine Runtime-Reparatur.
 
+## [0.1.6] - 2026-09-09
+
+- Den auf GitHub ungueltigen lokalen README-Link zum EnergyLens-App-Repository
+  durch den kanonischen GitHub-Link ersetzt.
+- Versionsquelle sowie sichtbare Footer- und Doku-Spiegel auf `0.1.6`
+  synchronisiert.
+
 ## [0.1.5] - 2026-07-26
 
 - FAQ- und Kontaktbereich auf der Startseite ergänzt: Tibber-Vertrag, Access

@@ -2,7 +2,7 @@
 
 Statische Landingpage für [EnergyLens](https://energylens.app) — die Strompreis- und Verbrauchs-App für Tibber-Nutzer.
 
-> **Aktuelle Version:** 0.1.5 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
+> **Aktuelle Version:** 0.1.6 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
 
 ## Live-URL
 
@@ -54,4 +54,4 @@ Nach Änderungen: Checker ausführen und Desktop sowie Mobilansicht per HTTP im 
 
 ## Verwandtes Projekt
 
-App-Repo: [EnergyLens (iOS)](../../../Entwicklung/Apps/EnergyLens) — SwiftUI, WidgetKit, Tibber GraphQL
+App-Repo: [EnergyLens (iOS)](https://github.com/eruberion/EnergyLens) — SwiftUI, WidgetKit, Tibber GraphQL
