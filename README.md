@@ -48,6 +48,11 @@ Chromium und WebKit werden getrennt geprueft; fehlende Browser sind ein Blocker,
 kein PASS. Bilder in `qa-evidence/*-browser/` bleiben lokal, bis ihre Herkunft
 als synthetisch und veroeffentlichbar bestaetigt ist.
 
+Das Teilen-Vorschaubild wird mit `node scripts/render_social_preview.cjs`
+und derselben vorhandenen Playwright-Laufzeit reproduziert. Es verwendet nur
+das lokale Marken-Icon und Text, keine App-/Kundendaten. Nach jedem Lauf das
+Bild tatsaechlich ansehen; Herkunft und Abnahme in `docs/SOCIAL-PREVIEW.md`.
+
 Umsetzung und Nachweisgrenzen: [Issue-22-Vertrag](docs/ISSUE-22-IMPLEMENTATION.md),
 [Produktfakten](docs/PRODUCT-FACTS.md), [QS-Bericht](docs/QA-22.md).
 

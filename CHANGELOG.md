@@ -20,6 +20,8 @@ bestehende Seiten, Inhalte und Ziele bleiben erhalten.
 - Inhalte auch ohne JavaScript und bei Observer-Ausfall sichtbar;
   Reduced Motion, Skip-Links, Fokusmarkierung und 200%-Text-Reflow abgesichert.
 - Produktbilder haben verstaendlichere Alttexte und einen Fehler-Fallback.
+- Teilen-Vorschaubild durch reproduzierbare Markenkarte aus bestehendem Icon,
+  Nutzen und Entwicklungsstatus ersetzt; keine alten Tibber-Screenshots darin.
 - Preisintervalle, Widget-Entwicklung, Pulse, Free/Premium und Datenfluesse
   anhand des nativen Quellstands getrennt von oeffentlicher Freigabe erklaert.
 - Wiederholbare Chromium-/WebKit-Regressionen und statische Accessibility-

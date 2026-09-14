@@ -116,6 +116,9 @@ Regeln:
 - Fehlendes Asset wird im Site-Check und visuell als Fehler behandelt.
 - Externe Rechts-/Support-/Store-Ziele erhalten sichtbaren Linktext und werden vor Release geprueft.
 - Social Preview hat eigenstaendigen Zuschnitt; sie ist kein Screenshot der gesamten Seite.
+- Die aktuelle 1200 × 630-Markenkarte zeigt vorhandenes App-Icon, Nutzen,
+  Tibber-/iPhone-Kontext und Entwicklungsstatus. Keine Kundendaten oder
+  historischen App-Screenshots; reproduzierbar nach `docs/SOCIAL-PREVIEW.md`.
 
 ## Accessibility und Motion
 

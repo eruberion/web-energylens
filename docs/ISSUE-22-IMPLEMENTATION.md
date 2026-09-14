@@ -48,8 +48,9 @@ Chromium und WebKit getrennt protokollieren. Screenshots tatsaechlich ansehen.
 ## Weiterarbeit / offene Grenzen
 
 1. Native #99 muss echte, befuellte App-Aufnahmen mit ausschliesslich
-   synthetischen Daten liefern. Alle bisherigen Produktbilder und Social
-   Preview dann pruefen/ersetzen. Das ist die verbliebene W1-Abhaengigkeit.
+   synthetischen Daten liefern. Alle bisherigen App-Produktbilder dann
+   pruefen/ersetzen. Das ist die verbliebene W1-Abhaengigkeit. Die Social
+   Preview ist bereits als datensparsame Markenkarte ersetzt und geprueft.
 2. Code-Review dieses Teilstands bestanden; erneute QS nach Assetwechsel.
 3. Zentrale Finn-/Graphify-Doku separat und unter eigenen Claims aktualisieren.
    Finns bisherige Doku-PR ist gemergt; kanonische lokale Doku-Checkouts enthalten

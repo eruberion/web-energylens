@@ -1,0 +1,61 @@
+{
+  "type": "brand-card-not-app-screenshot",
+  "size": [
+    1200,
+    630
+  ],
+  "browser": "151.0.7922.34",
+  "inputs": {
+    "site/assets/images/app-icon-new.png": "e9dd94ca7b0d81585ca92919582231daaee7278c9c22b169ac4d3525ff515cb2",
+    "site/assets/fonts/Inter-Regular.woff2": "e06f6b1bc553aaea4e4668023ed0ab0a147129c3107f511bc7d03d361b0ae085",
+    "site/assets/fonts/Inter-Bold.woff2": "fa888127b6da015b65569f0351f3b5c391ad928904951f1c20e9f8462a8d95ea"
+  },
+  "output": "site/assets/images/energylens-social-preview.png",
+  "outputSHA256": "8feb5bd2d29496c58a3cabd55f98bb773c612a1a87bfab2d65bdd9466cee1717",
+  "check": {
+    "width": 1200,
+    "height": 630,
+    "imageLoaded": true,
+    "text": "EnergyLens\n\nStrompreise.\nKlar im Blick.\n\nPreise vergleichen. Laufzeiten planen.\nFür Tibber-Kunden mit iPhone.\n\nIn Entwicklung · Noch nicht im App Store",
+    "boxes": [
+      {
+        "left": 72,
+        "top": 135,
+        "right": 712,
+        "bottom": 503,
+        "overflow": false
+      },
+      {
+        "left": 72,
+        "top": 192,
+        "right": 712,
+        "bottom": 347.5,
+        "overflow": false
+      },
+      {
+        "left": 72,
+        "top": 369.5,
+        "right": 712,
+        "bottom": 442,
+        "overflow": false
+      },
+      {
+        "left": 72,
+        "top": 476,
+        "right": 712,
+        "bottom": 503,
+        "overflow": false
+      },
+      {
+        "left": 752,
+        "top": 159,
+        "right": 1128,
+        "bottom": 479,
+        "overflow": false
+      }
+    ]
+  },
+  "errors": [],
+  "externalRequestsAllowed": false,
+  "visualReview": "required separately"
+}

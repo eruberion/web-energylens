@@ -30,12 +30,15 @@ ein vollstaendiger Herkunftsnachweis; die gepruefte Aufnahme zeigt die noch
 nicht verbundene App. Der native Demo-Token-Satz aus April ist ebenfalls kein
 rein synthetischer Fixture-Satz und hat andere Hashes.
 
-Bestehende Assets bleiben unveraendert. Die Site ordnet sie als frueheren
+Bestehende App-Screenshots bleiben vorerst unveraendert. Die Site ordnet sie als frueheren
 Entwicklungsstand ein und stellt korrigierte aktuelle Datenfluesse daneben.
 W1 ist hinsichtlich neuer, befuellter synthetischer Produktbilder **noch offen**.
 Vor Merge/Launch sind nach Freigabe des nativen Repos neue synthetische
 App-Aufnahmen erforderlich; keine realen Kundendaten erneut exportieren.
-Social-Preview-Bild bleibt unveraendert und benoetigt denselben Aktualitaetscheck.
+Das Social-Preview-Bild wurde am 14.09.2026 unabhaengig davon ersetzt:
+Markenkarte aus vorhandenem App-Icon, Nutzen und Entwicklungsstatus, ohne
+App-Aufnahme oder Kundendaten. Herkunft, Input-/Output-Hashes und Sichtabnahme
+stehen in `docs/SOCIAL-PREVIEW.md` und dessen QA-Bericht.
 
 ## Nicht vorweggenommene Freigaben
 
