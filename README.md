@@ -2,7 +2,7 @@
 
 Statische Landingpage für [EnergyLens](https://energylens.app) — die Strompreis- und Verbrauchs-App für Tibber-Nutzer.
 
-> **Aktuelle Version:** 0.1.6 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle.
+> **Aktuelle Quellversion:** 0.2.0 — sichtbar im Footer der Website; `VERSION` ist die kanonische Quelle. Ein Featurebranch ist kein Nachweis einer Live-Auslieferung.
 
 ## Live-URL
 
@@ -39,6 +39,17 @@ python3 -m http.server 4173 --directory site
 ```
 
 Nach Änderungen: Checker ausführen und Desktop sowie Mobilansicht per HTTP im Browser prüfen.
+
+Die wiederholbare Browser-QS liegt in `scripts/browser_qa.cjs`. Eine bereits
+installierte Playwright-Laufzeit ueber `PLAYWRIGHT_MODULE` angeben, optional
+`CHROMIUM_EXECUTABLE`, `QA_URL` und `QA_OUTPUT`. Das Skript installiert nichts
+und blockiert alle Requests ausserhalb der lokalen Test-Origin.
+Chromium und WebKit werden getrennt geprueft; fehlende Browser sind ein Blocker,
+kein PASS. Bilder in `qa-evidence/*-browser/` bleiben lokal, bis ihre Herkunft
+als synthetisch und veroeffentlichbar bestaetigt ist.
+
+Umsetzung und Nachweisgrenzen: [Issue-22-Vertrag](docs/ISSUE-22-IMPLEMENTATION.md),
+[Produktfakten](docs/PRODUCT-FACTS.md), [QS-Bericht](docs/QA-22.md).
 
 ## Regeln
 

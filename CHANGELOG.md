@@ -6,8 +6,26 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
-- `DESIGN.md` als vollstaendiges Design-System V2 fuer Landingpage, Support, Trust-/Claim-Grenzen und responsive QA aktualisiert; reale HTML/CSS-Tokens, Breakpoints, Komponentenstates, bekannte Accessibility-Luecken und No-Gos sind jetzt explizit. Site-Code und Version bleiben unveraendert.
-- Adversarial-/Self-Eval-Review gegen die gerenderte HTML-/CSS-/JavaScript-Struktur: fehlende Fokus-, Reduced-Motion- und No-JavaScript-Reveal-Absicherungen bleiben ehrlich als bestehende Luecken dokumentiert; die Doku-Aktualisierung behauptet keine Runtime-Reparatur.
+- Neue befuellte, nachweislich synthetische App-Bilder aus EnergyLens #99 stehen
+  noch aus. Die alten Assets bleiben als frueherer Entwicklungsstand eingeordnet.
+
+## [0.2.0] - 2026-09-14
+
+Quellversion des Website-UX-Teilstands zu #22, noch kein Deployment/Store-Release.
+Minor-Version wegen neuer mobiler Navigation und erweiterter Bedienbarkeit;
+bestehende Seiten, Inhalte und Ziele bleiben erhalten.
+
+- Mobil: Nutzen und Launchstatus vor der Geraetegrafik, alle fuenf Hauptziele
+  ueber natives Menue erreichbar; Escape, Fokus-Rueckgabe und grosse Touchziele.
+- Inhalte auch ohne JavaScript und bei Observer-Ausfall sichtbar;
+  Reduced Motion, Skip-Links, Fokusmarkierung und 200%-Text-Reflow abgesichert.
+- Produktbilder haben verstaendlichere Alttexte und einen Fehler-Fallback.
+- Preisintervalle, Widget-Entwicklung, Pulse, Free/Premium und Datenfluesse
+  anhand des nativen Quellstands getrennt von oeffentlicher Freigabe erklaert.
+- Wiederholbare Chromium-/WebKit-Regressionen und statische Accessibility-
+  Checks; Produktfakten, Designvertrag und ehrliche Abnahmegrenzen dokumentiert.
+- Vorausgegangene Design-System-V2-Dokumentation integriert und deren fruehere
+  Fokus-/Motion-/Reveal-Luecken mit diesem Codepaket geschlossen.
 
 ## [0.1.6] - 2026-09-09
 

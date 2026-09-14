@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import struct
 import sys
 from html.parser import HTMLParser
@@ -26,9 +27,11 @@ class PageParser(HTMLParser):
         self.ids: set[str] = set()
         self.meta: dict[str, str] = {}
         self.canonical = ""
+        self.elements: list[tuple[str, dict[str, str]]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {key: value or "" for key, value in attrs}
+        self.elements.append((tag, values))
         if values.get("id"):
             self.ids.add(values["id"])
         for attribute in ("href", "src"):
@@ -71,6 +74,12 @@ def main() -> int:
         pages[page.resolve()] = parser
 
     for page, parser in pages.items():
+        mains = [attrs for tag, attrs in parser.elements if tag == "main"]
+        if len(mains) != 1 or mains[0].get("id") != "main-content":
+            errors.append(f"{page.relative_to(ROOT)}: genau ein main#main-content erforderlich")
+        if not any(tag == "a" and "skip-link" in attrs.get("class", "").split()
+                   and attrs.get("href") == "#main-content" for tag, attrs in parser.elements):
+            errors.append(f"{page.relative_to(ROOT)}: Skip-Link zum Hauptinhalt fehlt")
         for attribute, ref in parser.refs:
             if ref == "#":
                 errors.append(f"{page.relative_to(ROOT)}: leeres {attribute}=\"#\"")
@@ -87,6 +96,19 @@ def main() -> int:
                 errors.append(f"{page.relative_to(ROOT)}: unbekannter Anker #{fragment}")
 
     index = (SITE / "index.html").read_text(encoding="utf-8")
+    index_parser = pages[(SITE / "index.html").resolve()]
+    if not any(tag == "details" and "mobile-menu" in attrs.get("class", "").split()
+               for tag, attrs in index_parser.elements):
+        errors.append("site/index.html: native mobile Navigation fehlt")
+    for ref in ("#features", "#tibber", "#faq", "#launch-status", "./support.html"):
+        if index_parser.refs.count(("href", ref)) < 2:
+            errors.append(f"site/index.html: Desktop-/Mobilzugang fehlt: {ref}")
+    css = (SITE / "assets/css/styles.css").read_text(encoding="utf-8")
+    reveal_default = re.search(r"(?m)^\.reveal\s*\{([^}]+)\}", css)
+    if not reveal_default or not re.search(r"opacity\s*:\s*1\s*[;}]", reveal_default.group(1) + "}"):
+        errors.append("styles.css: Reveal muss ohne JavaScript sichtbar starten")
+    if "prefers-reduced-motion: reduce" not in css or ":focus-visible" not in css:
+        errors.append("styles.css: Reduced-Motion-/Fokusabsicherung fehlt")
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not version:
         errors.append("VERSION ist leer")

@@ -7,7 +7,7 @@
 
 Ziel: `https://energylens.app/` (statische Landingpage).
 
-Aktueller Release Candidate: `0.1.6`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel.
+Aktueller Quellstand: `0.2.0`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel. Noch kein Deployment: neue synthetische App-Bilder und die uebrigen in `docs/ISSUE-22-IMPLEMENTATION.md` aufgefuehrten Freigaben bleiben Voraussetzung.
 
 Beim Audit am 26.07.2026 loesten `energylens.app` und `www.energylens.app`
 per HTTPS auf, der Live-HTML-Stand war aber weiterhin nicht der durch dieses
