@@ -94,6 +94,16 @@ async function testPage(browser, engine, width, height, mode = 'normal') {
       await check(injectedFailures.length > 0 && failedAssets.every(url => new URL(url).pathname.includes('/screenshot-')), 'only injected image failures');
     } else {
       await check(await page.locator('img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0 && img.alt)), 'all images loaded and labelled');
+      await check(await page.locator('.phone-screenshot').evaluateAll(images => images.length === 5 && images.every(img => {
+        const style = getComputedStyle(img);
+        const width = parseFloat(style.width);
+        const height = parseFloat(style.height);
+        return width > 0 && height > 0 && Math.abs(width / height - img.naturalWidth / img.naturalHeight) < 0.01;
+      })), 'all five product placements preserve the source image proportions');
+      if (mode === 'normal') {
+        await page.locator('.preview-section').scrollIntoViewIfNeeded();
+        await page.locator('.preview-section').screenshot({ path: path.join(output, `${label}-product-preview.png`) });
+      }
       await check(failedAssets.length === 0, 'no asset failures');
     }
     await check(errors.length === 0 && external.length === 0, 'no JS or external-request failures');

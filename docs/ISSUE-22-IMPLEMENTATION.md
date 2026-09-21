@@ -47,6 +47,55 @@ Chromium und WebKit getrennt protokollieren. Screenshots tatsaechlich ansehen.
 
 ## Weiterarbeit / offene Grenzen
 
+### Aktuell: GitHub-Sicherung und Nutzerpause am 21.09.2026
+
+Der neueste Nutzerauftrag beschraenkt die Arbeit auf Sicherung bei knappem
+Wochenkontingent. Kandidat **0.2.0** bleibt unveroeffentlicht in Draft-PR #23;
+kein Merge, kein Deployment, keine neue Browser-/Sichtabnahme. Die unten
+beschriebene Bilduebernahme ist weiter offen: vier finale native Aufnahmen
+fehlen; EnergyLens-Draft-PR #100 muss sie erst mit Provenienz liefern.
+Die erweiterten Bildproportionschecks sind gesichert, aber noch nicht erneut
+ausgefuehrt. Alte 24/24-Browserergebnisse bleiben historische Nachweise.
+Rechtsziele weiter mit dokumentierter DNS-Grenze. Nach Push regulaer pausieren;
+vor Fortsetzung Nutzerfreigabe und freie Zustaendigkeit pruefen.
+
+### Historische Wiederaufnahme am 21.09.2026: enger W1-Bildwechsel
+
+Bestehenden Branch und PR #23 fortgesetzt, Ausgangs-HEAD `8b9dc6c`.
+Der lokale repo-weite Claim und das bestehende pausierte RepoGuard-Work-Item
+wurden regulaer wieder aufgenommen. Kein Parallelbranch und keine neue
+Produktrichtung. Die nachfolgende Matrix ist ein Abnahmeplan, noch kein PASS.
+
+Visueller Vertrag (`design-agent`: Maintenance, implement + qa):
+
+- Vier frisch erstellte native PNGs fuer Dashboard hell/dunkel, Beste Zeiten
+  und Analyse ersetzen die vier bisherigen Produktbilder; das helle Dashboard
+  wird zusaetzlich im Hero verwendet. Keine alten Bilder als neue Fixtures
+  deklarieren und keine realen Tibber-/Kundendaten erneut exportieren.
+- Vor Uebernahme jede Aufnahme ansehen und an exakten App-Quell-SHA,
+  Buildversion, Reviewroute/-zustand und SHA-256 binden. Sichtbar befuellte
+  synthetische Werte, Einheiten und Modellgrenzen muessen erkennbar sein.
+- Nacht-/Mint-Gestaltung, mobile Copy-vor-Grafik-Hierarchie, Navigation,
+  Coming-soon-Status und bestehende Feature-/Datenschutzgrenzen bleiben
+  unveraendert. Alttexte und Bildhinweis werden an den belegten Satz angepasst.
+- Alle fuenf Bildplatzierungen behalten ihre natuerlichen Proportionen.
+  Hero und gesamte Produktvorschau bei 375, 768 und 1440 px ansehen;
+  320/390 px und die bisherigen Ausfall-/Accessibility-Szenarien regressionspruefen.
+- Site-Checker, Chromium/WebKit, echter Menue-/FAQ-/Supportpfad, Console/
+  Network, 200%-Text, Reduce Motion, No-JS und absichtlicher Bildausfall
+  bilden die finale QA. Generierte Screenshots allein sind keine Sichtabnahme.
+
+Dokumentations-/Versionsplan: Nach erfolgreicher Bilduebernahme Produktfakten,
+`DESIGN.md`, QA und Changelog aktualisieren. Die noch nicht integrierte
+Quellversion `0.2.0` bleibt fuer denselben PR-23-Kandidaten erhalten;
+README-, Deployment- und Footer-Spiegel bleiben konsistent. Kein weiterer
+Release pro Umsetzungsschritt und kein Deployment-/Store-Releaseclaim.
+Zentrale Dokumentation wird vom koordinierenden Owner getrennt bearbeitet.
+In dieser Arbeitskopie existiert kein lokaler `graphify-out/graph.json`;
+der zentrale Graph darf nicht auf diesen Featurebranch umgestempelt werden.
+Ein finaler Quellen-/Commit-Handoff erlaubt dessen regulaere Aktualisierung
+nach Integration. Externe semantische Backends und private Rohdaten bleiben aus.
+
 1. Native #99 muss echte, befuellte App-Aufnahmen mit ausschliesslich
    synthetischen Daten liefern. Alle bisherigen App-Produktbilder dann
    pruefen/ersetzen. Das ist die verbliebene W1-Abhaengigkeit. Die Social
