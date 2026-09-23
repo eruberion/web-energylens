@@ -34,6 +34,8 @@ async function testPage(browser, engine, width, height, mode = 'normal') {
   page.setDefaultTimeout(10000);
   const errors = [];
   const failedAssets = [];
+  const failedRequests = [];
+  page.on('requestfailed', request => failedRequests.push({ url: request.url(), error: request.failure()?.errorText }));
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => {
     if (message.type() === 'error' && !(mode === 'missing-image' && message.text().includes('404'))) errors.push(message.text());
@@ -103,18 +105,25 @@ async function testPage(browser, engine, width, height, mode = 'normal') {
       if (mode === 'normal') {
         await page.locator('.preview-section').scrollIntoViewIfNeeded();
         await page.locator('.preview-section').screenshot({ path: path.join(output, `${label}-product-preview.png`) });
+        // Element captures taller than the viewport can place fixed headers
+        // across the stitched image. Keep genuine viewport frames as evidence.
+        const items = await page.locator('.preview-item').all();
+        for (let i = 0; i < items.length; i++) {
+          await items[i].evaluate(element => element.scrollIntoView({ block: 'center', behavior: 'instant' }));
+          await page.screenshot({ path: path.join(output, `${label}-preview-item-${i + 1}.png`) });
+        }
       }
       await check(failedAssets.length === 0, 'no asset failures');
     }
-    await check(errors.length === 0 && external.length === 0, 'no JS or external-request failures');
+    await check(errors.length === 0 && external.length === 0 && failedRequests.length === 0, 'no JS or request failures');
     await page.goto(`${base}/support.html`, { waitUntil: 'networkidle' });
     if (mode === 'text-200') await page.addStyleTag({ content: 'html { font-size: 200%; }' });
     await check(await page.locator('a[href="./"]').last().isVisible(), 'support return navigation visible');
     await check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'support no horizontal overflow');
     await page.screenshot({ path: path.join(output, `${label}-support.png`) });
-    results.push({ engine, width, height, mode, result: 'pass', heroTop: hero.y, primaryBottom: primary.y + primary.height, errors, failedAssets, injectedFailures, external });
+    results.push({ engine, width, height, mode, result: 'pass', heroTop: hero.y, primaryBottom: primary.y + primary.height, errors, failedAssets, failedRequests, injectedFailures, external });
   } catch (error) {
-    results.push({ engine, width, height, mode, result: 'fail', error: error.message, errors, failedAssets, external });
+    results.push({ engine, width, height, mode, result: 'fail', error: error.message, errors, failedAssets, failedRequests, external });
     await page.screenshot({ path: path.join(output, `${label}-failure.png`) }).catch(() => {});
   } finally {
     console.log(`${label}: ${results.at(-1).result}`);

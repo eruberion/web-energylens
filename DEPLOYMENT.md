@@ -7,7 +7,7 @@
 
 Ziel: `https://energylens.app/` (statische Landingpage).
 
-Aktueller Quellstand: `0.2.0`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel. Noch kein Deployment: neue synthetische App-Bilder und die uebrigen in `docs/ISSUE-22-IMPLEMENTATION.md` aufgefuehrten Freigaben bleiben Voraussetzung.
+Aktueller Quellstand: `0.2.0`; `VERSION` ist die Quelle und die sichtbare Footer-Angabe der Auslieferungsspiegel. Die vier neuen synthetischen App-Bilder sind seit 23.09.2026 eingebunden; Herkunft in `docs/PRODUCT-IMAGES.md`, Abnahme in `docs/QA-22.md`. Noch kein Deployment: externe Rechtsziele, Hosting-/Live-Pruefung und die uebrigen in `docs/ISSUE-22-IMPLEMENTATION.md` aufgefuehrten Freigaben bleiben separat.
 
 Beim Audit am 26.07.2026 loesten `energylens.app` und `www.energylens.app`
 per HTTPS auf, der Live-HTML-Stand war aber weiterhin nicht der durch dieses

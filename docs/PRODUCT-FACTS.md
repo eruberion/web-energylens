@@ -1,6 +1,6 @@
-# Website-Faktenmatrix · 13.09.2026
+# Website-Faktenmatrix · Bildabschluss 23.09.2026
 
-Verifizierter nativer Quellstand: `eruberion/EnergyLens` main
+Historischer nativer Quellstand des Claim-Abgleichs: `eruberion/EnergyLens` main
 `ad7a4bfbe1c86b0b69e4cfb23c4deb249b4d9d6b` (1.9.12, Build 18).
 Implementiert ist nicht gleich veroeffentlicht. GitHub-Releases waren bei der
 Pruefung leer; App-Store-Verfuegbarkeit ist damit weder bestaetigt noch widerlegt.
@@ -21,20 +21,30 @@ Freigaben in `docs/APP_STORE_LAUNCH_CHECKLIST.md:16` und
 | Prognose | `PRODUCT.md:18` | Orientierung, keine garantierte Ersparnis, Rechnung oder automatische Geraetesteuerung. |
 | Website | `site/index.html`, `site/assets/css/styles.css` | Statische lokale Assets/Fonts, keine Tracker im Seiten-Code, kein Tibber-Login. Kein Audit unbekannter Hosting-Logs/Live-Injections. |
 
-## Bildherkunft / offener Freigabepunkt
+## Aktuelle Bildherkunft
 
-Die vorhandenen Bilder werden **nicht** als synthetische Fixture-Aufnahmen
+Alle vier Website-Produktbilder sind am 23.09.2026 ersetzt: unveraenderte,
+befuellte synthetische Aufnahmen aus App 1.10.0/19, sauberer Quellcommit
+`1c1c8dc31dcade2a8b991cd590c96d6a96f0619a`. Dashboard hell/dunkel, Beste Zeiten
+und Analyse (synthetischer Premium-Zustand) sind tatsaechlich angesehen.
+Keine Kunden-/Live-/Netzwerkdaten. Exakte Zuordnung, Fixture-/Binary-/Bildhashes
+und Grenzen stehen in `PRODUCT-IMAGES.md`; Website-Darstellung in `QA-22.md`.
+Der historische Claim-Abgleich oben wird durch einen Bildwechsel nicht zu
+einer erneuten Gesamtabnahme des nativen Produkts. Widget-/VoiceOver- und
+Releasegates bleiben getrennt beim nativen Abschluss.
+
+## Historische Bildherkunft vor dem Ersatz
+
+Die frueher vorhandenen Bilder wurden **nicht** als synthetische Fixture-Aufnahmen
 ausgegeben. Website-Commit `80556d0422f03660dfcbebd08ef331430a7406f2` beschreibt
 reale Tibber-Daten mit verwischtem Ort. Fuer das Dashboard aus `730a077` fehlt
 ein vollstaendiger Herkunftsnachweis; die gepruefte Aufnahme zeigt die noch
 nicht verbundene App. Der native Demo-Token-Satz aus April ist ebenfalls kein
 rein synthetischer Fixture-Satz und hat andere Hashes.
 
-Bestehende App-Screenshots bleiben vorerst unveraendert. Die Site ordnet sie als frueheren
-Entwicklungsstand ein und stellt korrigierte aktuelle Datenfluesse daneben.
-W1 ist hinsichtlich neuer, befuellter synthetischer Produktbilder **noch offen**.
-Vor Merge/Launch sind nach Freigabe des nativen Repos neue synthetische
-App-Aufnahmen erforderlich; keine realen Kundendaten erneut exportieren.
+Diese Bilder wurden nun vollstaendig aus den vier Produktdateien ersetzt,
+nicht nachtraeglich als synthetisch umetikettiert. Historische QA-Bilder mit
+den alten Assets bleiben kein Veroeffentlichungsnachweis des neuen Stands.
 Das Social-Preview-Bild wurde am 14.09.2026 unabhaengig davon ersetzt:
 Markenkarte aus vorhandenem App-Icon, Nutzen und Entwicklungsstatus, ohne
 App-Aufnahme oder Kundendaten. Herkunft, Input-/Output-Hashes und Sichtabnahme
@@ -42,7 +52,9 @@ stehen in `docs/SOCIAL-PREVIEW.md` und dessen QA-Bericht.
 
 ## Nicht vorweggenommene Freigaben
 
-- Native EnergyLens #99-Fixes und PR #90 gelten nicht als integriert.
+- Der Website-Abschluss behauptet weder die Integration von PR #90 noch eine
+  vollstaendige native #99-Abnahme. Der neue Bild-Quellstand ist oben exakt
+  benannt; Merge-/Releasezustand wird getrennt im nativen Repo nachgewiesen.
 - Kein App-Store-Release, TestFlight-Zugang, Datum oder konkreter Preis zugesagt.
 - Zentrale Rechtstexte bleiben fachkundig freigabepflichtig. Der Quellenabgleich
   der Website ist keine juristische Vollpruefung.

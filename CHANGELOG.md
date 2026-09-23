@@ -6,14 +6,18 @@ Alle sichtbaren, funktionalen oder relevanten Änderungen an der EnergyLens-Land
 
 ## [Unreleased]
 
-- Neue befuellte, nachweislich synthetische App-Bilder aus EnergyLens #99 stehen
-  noch aus. Die alten Assets bleiben als frueherer Entwicklungsstand eingeordnet.
+- Veroeffentlichung des 0.2.0-Kandidaten bleibt ein separater Freigabeschritt.
 
 ## [0.2.0] - 2026-09-14
 
 Quellversion des Website-UX-Teilstands zu #22, noch kein Deployment/Store-Release.
 Minor-Version wegen neuer mobiler Navigation und erweiterter Bedienbarkeit;
 bestehende Seiten, Inhalte und Ziele bleiben erhalten.
+
+- Abschluss 23.09.2026: alle vier alten App-Produktbilder durch unveraenderte,
+  befuellte synthetische Aufnahmen aus App 1.10.0/19 ersetzt; fuenf Platzierungen
+  inklusive Hero. Herkunft und SHA-256 dokumentiert. Alttexte und Bildhinweis
+  unterscheiden Beispielwerte, Premium-Vorschau und unveroeffentlichten Stand.
 
 - Mobil: Nutzen und Launchstatus vor der Geraetegrafik, alle fuenf Hauptziele
   ueber natives Menue erreichbar; Escape, Fokus-Rueckgabe und grosse Touchziele.

@@ -44,8 +44,11 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 
 ## Verifizierter Claim-Vertrag (2026-09-14)
 
-- Native Referenz: 1.9.12, Build 18, Commit `ad7a4bf`. Die Website-Version
-  0.2.0 liefert keine nativen Fehlerkorrekturen und bestaetigt keinen Release.
+- Historische Referenz des Claim-Abgleichs: 1.9.12, Build 18, Commit `ad7a4bf`.
+  Die neuen synthetischen Produktaufnahmen stammen aus 1.10.0, Build 19,
+  Commit `1c1c8dc` (23.09.2026); siehe `docs/PRODUCT-IMAGES.md`.
+  Die Website-Version 0.2.0 liefert keine nativen Fehlerkorrekturen und
+  bestaetigt keinen App-Store-Release oder vollstaendige native QA.
 - Viertelstundenpreise werden angefragt; Datenverfuegbarkeit und Markt bestimmen
   tatsaechliche Intervalle. Keine universelle Aktualisierungszusage.
 - Widgets existieren im Entwicklungsstand. Free/Premium bleibt eine geplante

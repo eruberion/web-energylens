@@ -1,6 +1,6 @@
 # EnergyLens Web Design-System V2
 
-Stand: 2026-09-14 · Website-Quellversion 0.2.0 (kein Deploymentnachweis)
+Stand: 2026-09-23 · Website-Quellversion 0.2.0 (kein Deploymentnachweis)
 Status: verbindliche Designquelle fuer die statische Produkt-, Support- und Vertrauensoberflaeche
 
 ## Scope und Oberflaechen
@@ -99,9 +99,10 @@ Regeln:
 - Bei fehlendem Bild bleibt Copy, Status und CTA vollstaendig; kein leerer schwarzer Container.
 - Bei geladenem JavaScript wird ein fehlendes Produktbild durch einen lesbaren
   Hinweis ersetzt. Ohne JavaScript bleiben Alttext und separate Produkt-Copy.
-- Die bisherigen Bilder sind aeltere Entwicklungsansichten, keine synthetischen
-  Fixtures. Aktuelle befuellte, datenschutzgepruefte App-Aufnahmen sind vor
-  Abschluss von #22 nachzuliefern; siehe `docs/PRODUCT-FACTS.md`.
+- Die vier aktuellen Originalaufnahmen zeigen App-Entwicklungsstand 1.10.0/19
+  mit ausschliesslich synthetischen Fixtures. Das helle Dashboard erscheint
+  auch im Hero. Natuerliche Proportionen erhalten; keine Bildbearbeitung oder
+  Livepreis-/Store-Freigabe daraus ableiten. Herkunft: `docs/PRODUCT-IMAGES.md`.
 
 ### Trust, Features und FAQ
 
