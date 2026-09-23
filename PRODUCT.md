@@ -41,3 +41,22 @@ Die Seite ist kein eigenstaendiges Energieprodukt, sondern Marketing- und Inform
 - Mobile Darstellung ohne horizontalen Overflow.
 - Assets und Links muessen vor oeffentlichem Launch geprueft sein.
 - Claims muessen mit dem iOS-App-Stand und den Tibber-API-Grenzen konsistent bleiben.
+
+## Verifizierter Claim-Vertrag (2026-09-14)
+
+- Historische Referenz des Claim-Abgleichs: 1.9.12, Build 18, Commit `ad7a4bf`.
+  Die neuen synthetischen Produktaufnahmen stammen aus 1.10.0, Build 19,
+  Commit `1c1c8dc` (23.09.2026); siehe `docs/PRODUCT-IMAGES.md`.
+  Die Website-Version 0.2.0 liefert keine nativen Fehlerkorrekturen und
+  bestaetigt keinen App-Store-Release oder vollstaendige native QA.
+- Viertelstundenpreise werden angefragt; Datenverfuegbarkeit und Markt bestimmen
+  tatsaechliche Intervalle. Keine universelle Aktualisierungszusage.
+- Widgets existieren im Entwicklungsstand. Free/Premium bleibt eine geplante
+  Produktaufteilung ohne erfundene Preise oder bestellbaren Store-Zugang.
+- Tibber-Token liegt im iOS-Schluesselbund; Tibber-Abrufe und Open-Meteo-
+  Wetterabrufe verlassen das Geraet. Neuer iCloud-Opt-in ist deaktiviert,
+  bereits gespeicherte Opt-ins koennen bestehen. Keine lokale Exklusivitaet.
+- Diese statische Website verarbeitet keinen Tibber-Login und bindet im
+  geprueften Quellcode keine Tracker ein. Hosting-/Rechtsfreigabe bleibt separat.
+
+Quellen, Assetherkunft und offene Freigaben: `docs/PRODUCT-FACTS.md`.

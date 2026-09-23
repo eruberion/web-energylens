@@ -1,6 +1,6 @@
 # EnergyLens Web Design-System V2
 
-Stand: 2026-08-20
+Stand: 2026-09-23 · Website-Quellversion 0.2.0 (kein Deploymentnachweis)
 Status: verbindliche Designquelle fuer die statische Produkt-, Support- und Vertrauensoberflaeche
 
 ## Scope und Oberflaechen
@@ -71,7 +71,9 @@ Verifizierte Baseline:
 Regeln:
 
 - Desktop: Copy zuerst in Leserichtung, Produktvorschau als Beleg daneben.
-- Unter 768 px: Hero, Features und FAQ einspaltig; Navigation reduziert Links statt Text/CTA zu quetschen.
+- Bis einschliesslich 768 px: Hero, Features und FAQ einspaltig. Copy und
+  Launchstatus stehen vor der Grafik; die Hauptnavigation wechselt zu einem
+  nativen Details-Menue mit allen fuenf Zielen statt Links zu entfernen.
 - Unter 460 px: Aussenraum und Displaygroessen sinken, Touchziele bleiben mindestens 44 × 44 px.
 - Kein horizontales Scrollen durch Phone-Stage, Glow oder lange URLs.
 - Abschnitte haben deutlich mehr vertikalen als inneren Card-Abstand; Cards werden nicht in jeder Ebene verschachtelt.
@@ -82,6 +84,11 @@ Regeln:
 ### Navigation und CTA
 
 - Logo/Wortmarke, Ankerlinks und Launchstatus bilden eine kompakte Leiste.
+- Mobiles Menue: `details/summary` mit nativer Zustandsemantik und 44-px-Zielen;
+  Escape schliesst und gibt Fokus zurueck, Anker aktivieren das Ziel unter dem
+  Header. Kein modaler Fokusfang; beim Desktopwechsel keine versteckten Ziele.
+- Textvergroesserung darf Leiste und Buttons wachsen lassen. Lange deutsche
+  Woerter duerfen umbrechen; keine feste Hoehe schneidet Haupttexte ab.
 - Aktueller Coming-soon-Zustand ist nicht interaktiv und sieht nicht wie ein funktionierender Store-Download aus.
 - Ein kuenftiger Store-Link darf erst nach verifiziertem Ziel, Claim- und Live-QA aktiv werden.
 
@@ -90,6 +97,12 @@ Regeln:
 - Hero erklaert Nutzen, Tibber-Voraussetzung und Plattformstatus.
 - Phone/Screenshot ist ein reales Produktasset mit sinnvollem Beschnitt und Alt-Text; keine erfundene App-UI.
 - Bei fehlendem Bild bleibt Copy, Status und CTA vollstaendig; kein leerer schwarzer Container.
+- Bei geladenem JavaScript wird ein fehlendes Produktbild durch einen lesbaren
+  Hinweis ersetzt. Ohne JavaScript bleiben Alttext und separate Produkt-Copy.
+- Die vier aktuellen Originalaufnahmen zeigen App-Entwicklungsstand 1.10.0/19
+  mit ausschliesslich synthetischen Fixtures. Das helle Dashboard erscheint
+  auch im Hero. Natuerliche Proportionen erhalten; keine Bildbearbeitung oder
+  Livepreis-/Store-Freigabe daraus ableiten. Herkunft: `docs/PRODUCT-IMAGES.md`.
 
 ### Trust, Features und FAQ
 
@@ -104,6 +117,9 @@ Regeln:
 - Fehlendes Asset wird im Site-Check und visuell als Fehler behandelt.
 - Externe Rechts-/Support-/Store-Ziele erhalten sichtbaren Linktext und werden vor Release geprueft.
 - Social Preview hat eigenstaendigen Zuschnitt; sie ist kein Screenshot der gesamten Seite.
+- Die aktuelle 1200 × 630-Markenkarte zeigt vorhandenes App-Icon, Nutzen,
+  Tibber-/iPhone-Kontext und Entwicklungsstatus. Keine Kundendaten oder
+  historischen App-Screenshots; reproduzierbar nach `docs/SOCIAL-PREVIEW.md`.
 
 ## Accessibility und Motion
 
@@ -115,14 +131,16 @@ Regeln:
 - Keine dauernd pulsierende Kernaktion; Animation darf Launchstatus oder Lesereihenfolge nicht verschleiern.
 - Kontrast wird auf realem Hintergrund, nicht nur gegen Tokenwerte geprueft.
 
-Bekannte Luecken der aktuellen statischen Implementierung:
+Umgesetzte Absicherung in 0.2.0:
 
-- Es gibt noch keinen expliziten `:focus-visible`-Stil und keinen Skip-Link.
-- `scroll-behavior: smooth`, Reveal-Transitions und der pulsierende Phone-Glow besitzen noch keinen `prefers-reduced-motion`-Fallback.
-- Reveal-Inhalte starten mit `opacity: 0`; ohne erfolgreiches JavaScript duerfen sie bei einer spaeteren Haertung nicht unsichtbar bleiben.
-- Native `<details>/<summary>`-Elemente liefern die FAQ-Semantik; dafuer wird kein erfundenes `aria-expanded` in der Doku als bereits implementiert behauptet.
+- `:focus-visible` und Skip-Link auf Start- und Supportseite vorhanden.
+- Reduce Motion deaktiviert Smooth Scroll und Animationen/Transitions.
+- Reveal startet sichtbar (`opacity: 1`); optionale Bewegung ist kein Ladegate.
+- Native `<details>/<summary>` liefern FAQ- und Menuesemantik; keine
+  widerspruechlich manuell gepflegten `aria-expanded`-Attribute.
 
-Diese Punkte sind dokumentierte Folgearbeit. Dieser reine Designvertrag veraendert bewusst weder CSS noch JavaScript.
+Die automatisierten Tests ersetzen keine WCAG-Zertifizierung oder vollstaendige
+VoiceOver-Abnahme. Tatsächlich gepruefte Szenarien stehen in `docs/QA-22.md`.
 
 ## No-Gos
 
